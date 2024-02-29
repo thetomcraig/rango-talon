@@ -77,20 +77,24 @@ show <user.rango_target>:
 upper: user.rango_command_without_target("scrollUpPage")
 upper <number>: user.rango_command_without_target("scrollUpPage", number)
 upper all: user.rango_command_without_target("scrollUpPage", 9999)
-tiny up | up a bit: user.rango_command_without_target("scrollUpPage", 0.2)
+tiny up: user.rango_command_without_target("scrollUpPage", 0.2)
+half up | up a bit: user.rango_command_without_target("scrollUpPage", 0.5)
 
 downer: user.rango_command_without_target("scrollDownPage")
 downer <number>: user.rango_command_without_target("scrollDownPage", number)
 downer all: user.rango_command_without_target("scrollDownPage", 9999)
-tiny down | down a bit: user.rango_command_without_target("scrollDownPage", 0.2)
+tiny down: user.rango_command_without_target("scrollDownPage", 0.2)
+half down | down a bit: user.rango_command_without_target("scrollDownPage", 0.5)
 
 scroll left: user.rango_command_without_target("scrollLeftPage")
 scroll left all: user.rango_command_without_target("scrollLeftPage", 9999)
-tiny left | left a bit: user.rango_command_without_target("scrollLeftPage", 0.2)
+tiny left: user.rango_command_without_target("scrollLeftPage", 0.2)
+half left | left a bit: user.rango_command_without_target("scrollLeftPage", 0.5)
 
 scroll right: user.rango_command_without_target("scrollRightPage")
 scroll right all: user.rango_command_without_target("scrollRightPage", 9999)
-tiny right | righta a bit: user.rango_command_without_target("scrollRightPage", 0.2)
+tiny right: user.rango_command_without_target("scrollRightPage", 0.2)
+half right | right a bit: user.rango_command_without_target("scrollRightPage", 0.5)
 
 # Scroll the left or right asides
 upper left: user.rango_command_without_target("scrollUpLeftAside")
