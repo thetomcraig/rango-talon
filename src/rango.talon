@@ -1,4 +1,5 @@
 tag: browser
+and not tag: user.rango_disabled
 -
 tag(): user.rango_direct_clicking
 
@@ -72,6 +73,10 @@ dismiss: user.rango_command_without_target("unhoverAll")
 # Show link address
 show <user.rango_target>:
   user.rango_command_with_target("showLink", rango_target)
+
+# Hide hint
+hide <user.rango_target>:
+  user.rango_command_with_target("hideHint", rango_target)
 
 # Scroll
 upper: user.rango_command_without_target("scrollUpPage")
@@ -234,6 +239,7 @@ rango open {user.rango_page}: user.rango_command_without_target("openPageInNewTa
 
 #  Hint/element references for scripting
 mark <user.rango_target> as <user.word>: user.rango_command_with_target("saveReference", rango_target, word)
+mark this as <user.word>: user.rango_command_without_target("saveReferenceForActiveElement", word)
 mark show: user.rango_command_without_target("showReferences")
 mark clear <user.word>: user.rango_command_without_target("removeReference", word)
 
@@ -241,6 +247,16 @@ mark clear <user.word>: user.rango_command_without_target("removeReference", wor
 click mark <user.word>: user.rango_run_action_on_reference("clickElement", word)
 focus mark <user.word>: user.rango_run_action_on_reference("focusElement", word)
 hover mark <user.word>: user.rango_run_action_on_reference("hoverElement", word)
+
+# Run action by matching the text of an element
+follow <user.text>:
+  user.rango_run_action_on_text_matched_element("clickElement", text, true)
+button <user.text>:
+  user.rango_run_action_on_text_matched_element("clickElement", text, false)
+focus text <user.text>:
+  user.rango_run_action_on_text_matched_element("focusElement", text, true)
+hover text <user.text>:
+  user.rango_run_action_on_text_matched_element("hoverElement", text, true)
 
 rango explicit: user.rango_force_explicit_clicking()
 rango direct: user.rango_force_direct_clicking()
