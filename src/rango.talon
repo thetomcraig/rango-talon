@@ -76,13 +76,13 @@ show <user.rango_target>:
 # Scroll
 upper: user.rango_command_without_target("scrollUpPage")
 upper <number>: user.rango_command_without_target("scrollUpPage", number)
-upper all: user.rango_command_without_target("scrollUpPage", 9999)
+upper all | crown page: user.rango_command_without_target("scrollUpPage", 9999)
 tiny up: user.rango_command_without_target("scrollUpPage", 0.2)
 half up | up a bit: user.rango_command_without_target("scrollUpPage", 0.5)
 
 downer: user.rango_command_without_target("scrollDownPage")
 downer <number>: user.rango_command_without_target("scrollDownPage", number)
-downer all: user.rango_command_without_target("scrollDownPage", 9999)
+downer all | bottom page: user.rango_command_without_target("scrollDownPage", 9999)
 tiny down: user.rango_command_without_target("scrollDownPage", 0.2)
 half down | down a bit: user.rango_command_without_target("scrollDownPage", 0.5)
 
