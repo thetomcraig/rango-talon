@@ -50,6 +50,9 @@ tab ahead: user.rango_command_without_target("cycleTabsByText", 1)
 tab behind: user.rango_command_without_target("cycleTabsByText", -1)
 
 # Close tabs
+close <user.rango_target>:
+    user.rango_command_with_target("activateTab", rango_target)
+    user.tab_close_wrapper()
 tab close other: user.rango_command_without_target("closeOtherTabsInWindow")
 tab close left: user.rango_command_without_target("closeTabsToTheLeftInWindow")
 tab close right: user.rango_command_without_target("closeTabsToTheRightInWindow")
