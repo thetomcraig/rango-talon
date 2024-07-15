@@ -28,7 +28,7 @@ tab marker refresh: user.rango_command_without_target("refreshTabMarkers")
 blank <user.rango_target>:
   user.rango_command_with_target("openInNewTab", rango_target)
 stash <user.rango_target>:
-  user.rango_command_with_target("openInBackgroundTab", rango_target)
+  user.rango_command_with_target("openInBackgroundTab", rango_target) 
 
 # Navigation
 go root: user.rango_command_without_target("navigateToPageRoot")
@@ -53,6 +53,7 @@ tab behind: user.rango_command_without_target("cycleTabsByText", -1)
 close <user.rango_target>:
     user.rango_command_with_target("activateTab", rango_target)
     user.tab_close_wrapper()
+    user.rango_command_without_target("focusPreviousTab")
 tab close other: user.rango_command_without_target("closeOtherTabsInWindow")
 tab close left: user.rango_command_without_target("closeTabsToTheLeftInWindow")
 tab close right: user.rango_command_without_target("closeTabsToTheRightInWindow")
