@@ -65,6 +65,11 @@ tab close previous [<number_small>]:
   user.rango_command_without_target("closePreviousTabsInWindow", number_small or 1)
 tab close next [<number_small>]:
   user.rango_command_without_target("closeNextTabsInWindow", number_small or 1)
+tab close <user.rango_target>:
+  tab_title = user.rango_command_without_target("getBareTitle")
+  user.rango_command_with_target("activateTab", rango_target)
+  user.tab_close_wrapper()
+  user.rango_command_without_target("focusTabByText", tab_title)
 
 # Clone tab
 tab clone: user.rango_command_without_target("cloneCurrentTab")
