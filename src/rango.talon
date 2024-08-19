@@ -20,7 +20,7 @@ flick <user.rango_target>:
   key(enter)
 
 # Focus tab
-(go tab | slot) <user.rango_tab_marker>:
+(go tab | slot) <user.rango_tab_marker> | (tab | slot) <user.rango_tab_marker>:
   user.rango_command_with_target("activateTab", rango_tab_marker)
 tab marker refresh: user.rango_command_without_target("refreshTabMarkers")
 
