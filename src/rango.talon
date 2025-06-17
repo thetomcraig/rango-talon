@@ -209,6 +209,7 @@ hints off [{user.rango_hints_toggle_levels}]:
 hints reset {user.rango_hints_toggle_levels}:
   user.rango_reset_toggle_level(rango_hints_toggle_levels)
 toggle show: user.rango_display_toggles_status()
+toggle hints | toggle hats: user.rango_command_without_target("toggleHints")
 labels: user.rango_enable_hints("now")
 
 # Toggle tab hints
