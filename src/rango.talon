@@ -73,6 +73,11 @@ tab close first [<number_small>]: user.rango_close_tabs_left_end(number_small or
 tab close final [<number_small>]: user.rango_close_tabs_right_end(number_small or 1)
 tab close previous [<number_small>]: user.rango_close_previous_tabs(number_small or 1)
 tab close next [<number_small>]: user.rango_close_next_tabs(number_small or 1)
+tab close <user.rango_target>:
+  tab_title = user.rango_command_without_target("getBareTitle")
+  user.rango_command_with_target("activateTab", rango_target)
+  user.tab_close_wrapper()
+  user.rango_command_without_target("focusTabByText", tab_title)
 
 # Clone tab
 tab clone: user.rango_clone_current_tab()
