@@ -95,12 +95,12 @@ hide <user.rango_target>: user.rango_hide_hint(rango_target)
 # Scroll
 upper: user.rango_scroll("main", "up")
 upper <number_small>: user.rango_scroll("main", "up", number_small)
-upper all: user.rango_scroll("main", "up", 9999)
+upper all | crown page | pre page: user.rango_scroll("main", "up", 9999)
 tiny up: user.rango_scroll("main", "up", 0.2)
 
 downer: user.rango_scroll("main", "down")
 downer <number_small>: user.rango_scroll("main", "down", number_small)
-downer all: user.rango_scroll("main", "down", 9999)
+downer all | bottom page: user.rango_scroll("main", "down", 9999)
 tiny down: user.rango_scroll("main", "down", 0.2)
 
 scroll left: user.rango_scroll("main", "left")
